@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-15-github-fleet-vault-indexer"
+version = "1.0.0"
+description = "MCP #15 : Superviseur de Patrimoine Git & Indexeur IA pour flottes de dépôts."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0"
+]
