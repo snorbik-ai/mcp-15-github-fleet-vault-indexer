@@ -1,0 +1,50 @@
+{
+  "name": "mcp-15-github-fleet-vault-indexer",
+  "displayName": "Snorbik MCP 15 \u2014 Github Fleet Vault Indexer",
+  "description": "Install MCP 15-github-fleet-vault-indexer into Cursor, VS Code, Claude Desktop/Code. Ships minimum Python kit when runtime=python.",
+  "version": "0.1.0",
+  "publisher": "snorbik-ai",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mcp-15-github-fleet-vault-indexer.installMcp",
+        "title": "Snorbik MCP 15 \u2014 Github Fleet Vault Indexer: Install MCP (All Clients)"
+      },
+      {
+        "command": "mcp-15-github-fleet-vault-indexer.showStatus",
+        "title": "Snorbik MCP 15 \u2014 Github Fleet Vault Indexer: Show Install Status"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "test": "npm run compile && node --test out/test/*.test.js",
+    "bundle-mcp": "node scripts/bundle-mcp.mjs",
+    "fetch-python": "node scripts/fetch-python-runtime.mjs",
+    "package": "npm run compile && npm run bundle-mcp && npm run fetch-python && npx --yes @vscode/vsce package --no-dependencies",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  },
+  "snorbik": {
+    "componentName": "15-github-fleet-vault-indexer",
+    "entrypointRel": "canal_mcp/mcp_server.py",
+    "runtime": "python",
+    "toolFolder": "15_github_fleet_vault_indexer"
+  }
+}

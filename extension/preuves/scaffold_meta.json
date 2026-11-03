@@ -1,0 +1,6 @@
+{
+  "component": "15-github-fleet-vault-indexer",
+  "entrypoint": "canal_mcp/mcp_server.py",
+  "runtime": "python",
+  "extension": "outils_internes/15_github_fleet_vault_indexer/extension"
+}
